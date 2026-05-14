@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 34 33% 96%;
+    --foreground: 15 20% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 15 20% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 20% 14%;
+    --primary: 10 57% 44%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 36 31% 90%;
+    --secondary-foreground: 15 20% 14%;
+    --muted: 30 18% 89%;
+    --muted-foreground: 16 12% 37%;
+    --accent: 42 82% 63%;
+    --accent-foreground: 20 26% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 20% 83%;
+    --input: 20 20% 83%;
+    --ring: 10 57% 44%;
+    --radius: 1.25rem;
+  }
+
+  .dark {
+    --background: 18 17% 9%;
+    --foreground: 32 38% 93%;
+    --card: 18 16% 13%;
+    --card-foreground: 32 38% 93%;
+    --popover: 18 16% 13%;
+    --popover-foreground: 32 38% 93%;
+    --primary: 12 63% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 18 14% 19%;
+    --secondary-foreground: 32 38% 93%;
+    --muted: 18 13% 18%;
+    --muted-foreground: 28 17% 71%;
+    --accent: 41 72% 56%;
+    --accent-foreground: 18 17% 10%;
+    --destructive: 0 63% 47%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 18 12% 24%;
+    --input: 18 12% 24%;
+    --ring: 12 63% 57%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(129, 41, 55, 0.14), transparent 28%),
+      radial-gradient(circle at 82% 10%, rgba(199, 165, 106, 0.15), transparent 18%),
+      radial-gradient(circle at 50% 0%, rgba(52, 18, 24, 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(250, 245, 238, 0.98), rgba(239, 229, 218, 1));
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(181, 87, 62, 0.18);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/60 bg-white/70 backdrop-blur-xl;
+  }
+
+  .salon-hero {
+    background:
+      radial-gradient(circle at top left, rgba(212, 170, 103, 0.16), transparent 24%),
+      radial-gradient(circle at bottom right, rgba(145, 38, 63, 0.22), transparent 30%),
+      linear-gradient(145deg, rgba(44, 16, 24, 0.98), rgba(74, 27, 39, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 34px 90px -36px rgba(42, 17, 22, 0.76),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .salon-dark-card {
+    background:
+      radial-gradient(circle at top left, rgba(212, 170, 103, 0.14), transparent 24%),
+      linear-gradient(155deg, rgba(50, 18, 27, 0.98), rgba(88, 31, 46, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 28px 72px -42px rgba(42, 17, 22, 0.82),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .salon-soft-card {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.7)),
+      linear-gradient(120deg, rgba(206, 166, 101, 0.08), rgba(255, 255, 255, 0));
+    @apply border border-white/70 backdrop-blur-xl;
+    box-shadow: 0 26px 64px -44px rgba(60, 35, 42, 0.34);
+  }
+
+  .salon-glass-card {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    @apply backdrop-blur-sm;
+  }
+
+  .salon-pill {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    @apply inline-flex items-center rounded-full px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em];
+  }
+
+  .velvet-panel {
+    background:
+      radial-gradient(circle at top left, rgba(199, 165, 106, 0.22), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(163, 53, 77, 0.24), transparent 28%),
+      linear-gradient(145deg, rgba(42, 17, 22, 0.98), rgba(70, 24, 36, 0.96));
+    box-shadow:
+      0 32px 90px -34px rgba(42, 17, 22, 0.76),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .quiet-panel {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.68)),
+      linear-gradient(120deg, rgba(199, 165, 106, 0.08), rgba(255, 255, 255, 0));
+    @apply border border-white/70 backdrop-blur-xl;
+    box-shadow: 0 24px 60px -42px rgba(60, 35, 42, 0.34);
+  }
+
+  .editorial-chip {
+    @apply inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em];
+  }
+}

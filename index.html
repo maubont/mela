@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melany - Contenido Premium Exclusivo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #c084fc;
+            --secondary: #ec4899;
+            --light: #ffffff;
+            --light-secondary: #f8f8f8;
+            --light-tertiary: #f0f0f0;
+            --dark: #0f0f0f;
+            --dark-secondary: #1a1a1a;
+            --dark-tertiary: #242424;
+            --text-light: #1a1a1a;
+            --text-dark: #f8f8f8;
+            --text-muted-light: #666666;
+            --text-muted-dark: #a8a8a8;
+            --border-light: #e0e0e0;
+            --border-dark: #333333;
+            --accent: #f97316;
+        }
+
+        /* TEMA CLARO (por defecto) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: var(--text-light);
+            line-height: 1.6;
+            --bg: var(--light);
+            --bg-secondary: var(--light-secondary);
+            --bg-tertiary: var(--light-tertiary);
+            --text: var(--text-light);
+            --text-muted: var(--text-muted-light);
+            --border: var(--border-light);
+        }
+
+        /* TEMA OSCURO */
+        body.dark-mode {
+            --bg: var(--dark);
+            --bg-secondary: var(--dark-secondary);
+            --bg-tertiary: var(--dark-tertiary);
+            --text: var(--text-dark);
+            --text-muted: var(--text-muted-dark);
+            --border: var(--border-dark);
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode nav {
+            background: rgba(15, 15, 15, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .balance-badge {
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        /* THEME TOGGLE */
+        .theme-toggle {
+            width: 50px;
+            height: 26px;
+            background: var(--border);
+            border: none;
+            border-radius: 13px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+        }
+
+        .theme-toggle-circle {
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 2px;
+            transition: left 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        body.dark-mode .theme-toggle-circle {
+            left: 26px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(236, 72, 153, 0.05) 50%, var(--bg) 100%);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.1) 0%, rgba(236, 72, 153, 0.05) 50%, rgba(15, 15, 15, 0.9) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: var(--text);
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(192, 132, 252, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 550px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .online-indicator {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .online-indicator::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* CONTENT PACKAGES */
+        .packages-section {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .packages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .package-card {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .package-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.15);
+        }
+
+        body.dark-mode .package-card:hover {
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.2);
+        }
+
+        .package-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(192, 132, 252, 0.2);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .package-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        /* GALLERY SECTION */
+        .gallery-section {
+            padding: 6rem 2rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        body.dark-mode .gallery-item {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .about-content {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .contact-content p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
+        }
+
+        .contact-method h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-method p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .contact-method a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .payment-badge {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+
+            nav a {
+                margin: 0 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                width: 45px;
+                height: 24px;
+            }
+
+            .theme-toggle-circle {
+                width: 20px;
+                height: 20px;
+            }
+
+            body.dark-mode .theme-toggle-circle {
+                left: 23px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <div class="logo">MELANY</div>
+            <div style="display: flex; gap: 2rem;">
+                <a href="#contenido">Contenido</a>
+                <a href="#galeria">Galería</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="nav-right">
+                <div class="balance-badge">💰 Saldo: $0.00</div>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+                    <div class="theme-toggle-circle" id="toggleCircle">🌙</div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="subtitle">🔥 Contenido Exclusivo Premium</div>
+                <h1>Hola, soy <span>Melany</span></h1>
+                <p>Una chica versátil, ardiente y muy complaciente, dispuesta a cumplir tus fantasías de manera natural y descomplicada. Aquí encontrarás contenido exclusivo: videos personalizados, fotos premium y videollamadas privadas donde podemos conectar de verdad.</p>
+                <div class="badges">
+                    <div class="badge">✓ Verificada</div>
+                    <div class="badge">🎥 Videos Exclusivos</div>
+                    <div class="badge">📱 Videollamadas</div>
+                    <div class="badge">⚡ Respuesta Rápida</div>
+                </div>
+                <div style="margin-bottom: 2rem; font-weight: 600; color: #10b981; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite;"></span>
+                    🟢 EN LÍNEA AHORA
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Ver Contenido Premium</button>
+                    <button class="btn btn-secondary">Contactarme</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/melany_hero.png" alt="Melany">
+                <div class="online-indicator">🟢 EN LÍNEA AHORA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+    <section id="contenido" class="packages-section">
+        <h2 class="section-title">Paquetes de Contenido Exclusivo</h2>
+        <p class="section-subtitle">Acceso a videos, fotos y contenido personalizado</p>
+        
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-title">📸 Fotos Exclusivas</div>
+                <p class="package-description">Acceso a galería completa de fotos premium</p>
+                <div class="package-price">$9.99</div>
+                <ul class="package-features">
+                    <li>50+ Fotos en alta resolución</li>
+                    <li>Actualizaciones semanales</li>
+                    <li>Acceso de por vida</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Comprar Ahora</button>
+            </div>
+
+            <div class="package-card featured">
+                <div class="package-badge">MÁS POPULAR</div>
+                <div class="package-title">🎥 Videos Personalizados</div>
+                <p class="package-description">Videos a medida según tus fantasías</p>
+                <div class="package-price">$29.99</div>
+                <ul class="package-features">
+                    <li>Video personalizado 5-10 min</li>
+                    <li>Cumple tus peticiones</li>
+                    <li>Entrega en 24-48 horas</li>
+                    <li>Contenido exclusivo</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Comprar Ahora</button>
+            </div>
+
+            <div class="package-card">
+                <div class="package-title">💎 VIP Completo</div>
+                <p class="package-description">Acceso total a todo el contenido premium</p>
+                <div class="package-price">$59.99</div>
+                <ul class="package-features">
+                    <li>Todas las fotos y videos</li>
+                    <li>Videollamadas (15 min/mes)</li>
+                    <li>Contenido nuevo diario</li>
+                    <li>Soporte prioritario</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Comprar Ahora</button>
+            </div>
+
+            <div class="package-card">
+                <div class="package-title">📞 Videollamada Privada</div>
+                <p class="package-description">Sesión en vivo personalizada contigo</p>
+                <div class="package-price">$49.99</div>
+                <ul class="package-features">
+                    <li>15 minutos en vivo</li>
+                    <li>Interacción directa</li>
+                    <li>Cumple peticiones</li>
+                    <li>Grabación disponible</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Reservar Ahora</button>
+            </div>
+
+            <div class="package-card">
+                <div class="package-title">🌟 Suscripción Mensual</div>
+                <p class="package-description">Acceso ilimitado por 30 días</p>
+                <div class="package-price">$79.99</div>
+                <ul class="package-features">
+                    <li>Contenido ilimitado</li>
+                    <li>2 videollamadas/mes</li>
+                    <li>Videos personalizados</li>
+                    <li>Descuentos especiales</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Suscribirse</button>
+            </div>
+
+            <div class="package-card">
+                <div class="package-badge">38% AHORRO</div>
+                <div class="package-title">👑 Membresía Anual</div>
+                <p class="package-description">Máximo ahorro con acceso anual</p>
+                <div class="package-price">$599.99</div>
+                <ul class="package-features">
+                    <li>Todo incluido por 12 meses</li>
+                    <li>4 videollamadas/mes</li>
+                    <li>Acceso prioritario</li>
+                    <li>Ahorro del 38%</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;">Suscribirse Anual</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="galeria" class="gallery-section">
+        <h2 class="section-title">Mi Galería Premium</h2>
+        <p class="section-subtitle">Muestra de contenido exclusivo disponible</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/gallery_1.jpg" alt="Foto Premium">
+                <div class="gallery-overlay"><span>📸</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_2.jpg" alt="Video Clip">
+                <div class="gallery-overlay"><span>🎥</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_3.jpg" alt="Foto Premium">
+                <div class="gallery-overlay"><span>📸</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_4.jpg" alt="Video Clip">
+                <div class="gallery-overlay"><span>🎥</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_5.jpg" alt="Foto Premium">
+                <div class="gallery-overlay"><span>📸</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_6.jpg" alt="Video Clip">
+                <div class="gallery-overlay"><span>🎥</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_7.jpg" alt="Foto Premium">
+                <div class="gallery-overlay"><span>📸</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="/gallery_8.jpg" alt="Video Clip">
+                <div class="gallery-overlay"><span>🎥</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre-mi" class="about-section">
+        <div class="about-content">
+            <h2>Sobre Mí</h2>
+            <p>Hola, soy Melany. Una chica versátil, ardiente y muy complaciente, dispuesta a cumplir tus fantasías de manera natural y descomplicada.</p>
+            
+            <p>Tengo un cuerpo curvilíneo con glúteos voluptuosos y prominentes, firmes y muy atractivos, junto a una polla deliciosa. Disfruto tanto en el rol activo como en el pasivo, siempre con buena vibra y buscando que vivas un momento intenso y placentero.</p>
+            
+            <p>Aquí encontrarás contenido exclusivo: videos personalizados, fotos premium y videollamadas privadas donde podemos conectar de verdad. Disponible 24/7 en un lugar discreto y cómodo.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <div class="feature-title">Versátil</div>
+                    <div class="feature-description">Activa y pasiva sin límites</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍑</div>
+                    <div class="feature-title">Culona</div>
+                    <div class="feature-description">Culo gordo y trabajado</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😈</div>
+                    <div class="feature-title">Complaciente</div>
+                    <div class="feature-description">Cumple tus fantasías</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Disponible 24/7</div>
+                    <div class="feature-description">Siempre lista para ti</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-content">
+            <h2>Contactarme</h2>
+            <p>¿Interesado en contenido exclusivo? Ponte en contacto conmigo o compra directamente</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>📱 WhatsApp</h3>
+                    <p>Respuesta rápida y directa</p>
+                    <a href="https://wa.me/573022815453">+57 302 281 5453</a>
+                </div>
+                <div class="contact-method">
+                    <h3>✈️ Telegram</h3>
+                    <p>Mensajes privados seguros</p>
+                    <a href="https://t.me/melany_vip">@melany_vip</a>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--text);">💳 Métodos de Pago</h3>
+            <div class="payment-methods">
+                <div class="payment-badge">💳 Tarjeta</div>
+                <div class="payment-badge">₿ Crypto</div>
+                <div class="payment-badge">📱 E-wallet</div>
+                <div class="payment-badge">🏦 Transferencia</div>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Todos los métodos disponibles</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Melany - Contenido Premium. Todos los derechos reservados.</p>
+        <p>
+            <a href="#terminos">Términos y Condiciones</a> | 
+            <a href="#privacidad">Política de Privacidad</a> | 
+            <a href="#reembolso">Política de Reembolso</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">⚠️ Debes ser mayor de 18 años para acceder a este contenido</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const toggleCircle = document.getElementById('toggleCircle');
+        const body = document.body;
+
+        // Cargar tema guardado
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            toggleCircle.textContent = '☀️';
+        }
+
+        // Toggle tema
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            toggleCircle.textContent = isDarkMode ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
