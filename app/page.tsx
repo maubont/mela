@@ -165,31 +165,31 @@ const trustSignals = [
 export default function HomePage() {
   return (
     <main className="overflow-x-clip pb-24">
-      <section className="container px-4 pt-6 sm:pt-8">
-        <div className="salon-hero relative overflow-hidden rounded-[3.2rem] px-5 py-6 text-white sm:px-8 sm:py-9 lg:px-12 lg:py-12">
+      <section className="container px-4 pt-4 sm:pt-8">
+        <div className="salon-hero relative overflow-hidden rounded-[2.15rem] px-5 py-5 text-white sm:rounded-[3.2rem] sm:px-8 sm:py-9 lg:px-12 lg:py-12">
           <div className="absolute -left-28 top-8 h-72 w-72 rounded-full bg-[#f0b35f]/16 blur-3xl" />
           <div className="absolute right-[-8rem] top-[-5rem] h-[28rem] w-[28rem] rounded-full bg-[#ff2e38]/14 blur-3xl" />
           <div className="absolute bottom-0 left-1/2 h-44 w-[70%] -translate-x-1/2 bg-gradient-to-t from-black/30 to-transparent blur-2xl" />
 
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div className="relative z-10 grid gap-6 sm:gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/76 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-white/76 backdrop-blur-sm sm:px-4 sm:text-[0.68rem] sm:tracking-[0.24em]">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.7)]" />
-                Medellín · esta noche puedo aparecer
+                Medellín · disponible hoy
               </div>
 
-              <p className="mt-8 text-[0.72rem] uppercase tracking-[0.42em] text-[#f0c878]/70">
+              <p className="mt-6 text-[0.66rem] uppercase tracking-[0.32em] text-[#f0c878]/70 sm:mt-8 sm:text-[0.72rem] sm:tracking-[0.42em]">
                 Salón privado
               </p>
-              <h1 className="mt-5 max-w-[11ch] font-[family-name:var(--font-display)] text-[4.2rem] font-semibold leading-[0.84] tracking-[-0.07em] text-balance sm:text-[6.8rem] lg:text-[7.7rem]">
+              <h1 className="mt-4 max-w-[11ch] font-[family-name:var(--font-display)] text-[3.35rem] font-semibold leading-[0.9] tracking-[-0.065em] text-balance min-[390px]:text-[3.75rem] sm:mt-5 sm:text-[6.8rem] sm:leading-[0.84] lg:text-[7.7rem]">
                 No todo lo mío cabe en público.
               </h1>
-              <p className="mt-7 max-w-xl text-lg leading-9 text-white/78 sm:text-xl sm:leading-10">
+              <p className="mt-5 max-w-xl text-[1.02rem] leading-8 text-white/78 sm:mt-7 sm:text-xl sm:leading-10">
                 En Medellín hay una parte de mí que se mira más cerca: fotos reservadas, mensajes
                 con intención y entradas privadas para quienes sí saben quedarse.
               </p>
 
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-col gap-3 min-[430px]:flex-row sm:mt-9 sm:flex-wrap">
                 <Button
                   asChild
                   size="lg"
@@ -209,28 +209,11 @@ export default function HomePage() {
                   <Link href="#en-vivo">Seguir la noche</Link>
                 </Button>
               </div>
-
-              <div className="mt-9 grid max-w-xl grid-cols-3 gap-3">
-                {[
-                  ["80K+", "miradas cerca"],
-                  ["18+", "entrada adulta"],
-                  ["Tokens", "acceso privado"],
-                ].map(([value, label]) => (
-                  <div key={label} className="rounded-[1.4rem] border border-white/10 bg-white/7 px-4 py-4">
-                    <p className="font-[family-name:var(--font-display)] text-3xl font-semibold leading-none">
-                      {value}
-                    </p>
-                    <p className="mt-2 text-[0.68rem] uppercase tracking-[0.18em] text-white/48">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="relative mx-auto w-full max-w-[42rem]">
-              <div className="rounded-[2.8rem] border border-white/12 bg-black/24 p-3 shadow-[0_60px_140px_-62px_rgba(0,0,0,0.95)]">
-                <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2.25rem]">
+              <div className="rounded-[2rem] border border-white/12 bg-black/24 p-2 shadow-[0_60px_140px_-62px_rgba(0,0,0,0.95)] sm:rounded-[2.8rem] sm:p-3">
+                <div className="relative aspect-[4/4.95] overflow-hidden rounded-[1.6rem] sm:aspect-[4/4.6] sm:rounded-[2.25rem]">
                   <Image
                     src="/media/melany-hero-1.jpg"
                     alt="Melany con lencería merlot en una pose editorial"
@@ -239,25 +222,41 @@ export default function HomePage() {
                     sizes="(max-width: 1024px) 100vw, 42rem"
                     className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#150006]/78 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#150006]/72 via-black/5 to-transparent" />
 
-                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/18 bg-black/26 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white/84 backdrop-blur-md">
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/18 bg-black/28 px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/84 backdrop-blur-md sm:left-5 sm:top-5 sm:text-[0.68rem] sm:tracking-[0.24em]">
                     <span className="h-2 w-2 rounded-full bg-emerald-400" />
                     En línea
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                    <p className="max-w-md font-[family-name:var(--font-display)] text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-5xl">
-                      Esta parte se gana entrando, no mirando desde lejos.
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+                    <p className="max-w-[17rem] font-[family-name:var(--font-display)] text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.05em] text-white sm:max-w-md sm:text-5xl">
+                      Entra donde la noche se vuelve privada.
                     </p>
-                    <p className="mt-4 max-w-sm text-sm leading-7 text-white/72">
-                      Imágenes, mensajes y momentos privados para cuando la curiosidad ya no quiere
-                      quedarse mirando desde fuera.
+                    <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/74 sm:mt-4 sm:max-w-sm sm:leading-7">
+                      Imágenes y mensajes para cuando la curiosidad ya quiere mirar más cerca.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="relative z-10 mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:max-w-xl sm:gap-3 lg:max-w-none">
+            {[
+              ["80K+", "miradas"],
+              ["18+", "adultos"],
+              ["Tokens", "entrada"],
+            ].map(([value, label]) => (
+              <div key={label} className="rounded-[1.2rem] border border-white/10 bg-white/7 px-3 py-3 sm:rounded-[1.4rem] sm:px-4 sm:py-4">
+                <p className="font-[family-name:var(--font-display)] text-2xl font-semibold leading-none sm:text-3xl">
+                  {value}
+                </p>
+                <p className="mt-2 text-[0.58rem] uppercase tracking-[0.16em] text-white/48 sm:text-[0.68rem] sm:tracking-[0.18em]">
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
