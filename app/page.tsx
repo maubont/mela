@@ -20,29 +20,29 @@ import { Button } from "@/components/ui/button";
 const audiencePaths = [
   {
     icon: Radio,
-    eyebrow: "Si vengo de verte en vivo",
-    title: "No todo termina cuando se apaga la transmisión.",
+    eyebrow: "Esta noche",
+    title: "Si me viste aparecer, sabes que falta una puerta más.",
     description:
-      "Lo que quedó insinuado puede seguir en una entrada privada, con drops y mensajes que no tienen que competir con todo el chat.",
+      "Lo que apenas insinué puede continuar con más calma, lejos del ruido y mucho más cerca de mí.",
     cta: "Ver la entrada de esta noche",
     href: "/sign-in?entrada=live",
   },
   {
     icon: Eye,
-    eyebrow: "Si llegas desde mis redes",
-    title: "Aquí está la parte que no puedo dejar tan pública.",
+    eyebrow: "Curiosidad",
+    title: "Hay una parte que prefiero enseñarte de cerca.",
     description:
-      "Te recibo con imágenes reservadas, conversación más cercana y una forma de mirar que se siente mucho menos casual.",
+      "Imágenes reservadas, conversación con intención y una forma de mirar que se siente menos casual desde el primer paso.",
     cta: "Solicitar acceso",
     href: "/sign-in?entrada=redes",
   },
   {
     icon: Gem,
-    eyebrow: "Si ya sabes lo que buscas",
-    title: "Entra directo, sin perder el tono.",
+    eyebrow: "Antojo",
+    title: "Elige tu entrada y déjame acercarte.",
     description:
-      "Tokens, contenido desbloqueable, chat y solicitudes privadas en un solo lugar, con discreción desde el primer paso.",
-    cta: "Elegir tokens",
+      "Fotos, videos, chat y solicitudes privadas con una entrada clara, discreta y hecha para no enfriar el momento.",
+    cta: "Elegir entrada",
     href: "/sign-in?entrada=tokens",
   },
 ] as const;
@@ -96,7 +96,7 @@ const tokenPackages = [
     idealFor: "La entrada que más sentido tiene",
     description:
       "Para quedarte después del primer vistazo: más contenido, más conversación y más margen para llevar la noche a tu ritmo.",
-    bullets: ["series privadas", "chat más largo", "propinas y after del live"],
+    bullets: ["series privadas", "chat más largo", "propinas y entradas reservadas"],
     cta: "Elegir 385",
     featured: true,
   },
@@ -116,27 +116,27 @@ const tokenPackages = [
 const liveLoop = [
   {
     step: "01",
-    title: "Me encuentras en escena",
+    title: "La noche empieza con una mirada",
     description:
-      "Cuando estoy transmitiendo, el live prende la curiosidad y deja claro quién quiere mirar un poco más cerca.",
+      "A veces aparezco en vivo, a veces dejo apenas una pista. Si te provoca, aquí sabes cómo acercarte.",
   },
   {
     step: "02",
-    title: "El after queda aquí",
+    title: "Lo que provoca merece otro lugar",
     description:
-      "Lo que no debe perderse entre el chat se convierte en drops, replays o entradas privadas dentro del salón.",
+      "Hay imágenes, mensajes y momentos que prefiero guardar para quien entra con más intención.",
   },
   {
     step: "03",
     title: "Mela te acomoda",
     description:
-      "Si llegas caliente del live o desde redes, Mela te guía a la entrada correcta sin hacerte dar vueltas.",
+      "Si llegas con ganas, Mela te recibe suave y te lleva a la entrada que más sentido tiene para ti.",
   },
 ] as const;
 
 const melaHighlights = [
   "Te recibe sin hacerte esperar.",
-  "Sabe si vienes del live, de redes o por un drop.",
+  "Sabe si vienes curioso o con ganas de más.",
   "Te propone qué abrir primero.",
   "Me deja el contexto listo para seguir contigo.",
 ] as const;
@@ -158,7 +158,7 @@ const trustSignals = [
     icon: Coins,
     title: "Tokens con propósito",
     description:
-      "No compras saldo muerto: desbloqueas drops, mensajes, afters, propinas y momentos más personales.",
+      "Cada token debe acercarte a algo: imágenes, mensajes, propinas y momentos más personales.",
   },
 ] as const;
 
@@ -186,14 +186,14 @@ export default function HomePage() {
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-9 text-white/78 sm:text-xl sm:leading-10">
                 En Medellín hay una parte de mí que se mira más cerca: fotos reservadas, mensajes
-                con intención, afters del live y entradas privadas para quienes sí saben quedarse.
+                con intención y entradas privadas para quienes sí saben quedarse.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-3">
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-full bg-[#fff3e3] px-7 text-[#2a0711] shadow-[0_22px_46px_-28px_rgba(255,230,190,0.7)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                  className="rounded-full bg-primary px-7 text-primary-foreground shadow-[0_22px_46px_-28px_rgba(181,17,68,0.72)] transition duration-300 hover:-translate-y-0.5 hover:bg-primary/92"
                 >
                   <Link href="/sign-in">
                     Solicitar acceso
@@ -206,13 +206,13 @@ export default function HomePage() {
                   variant="outline"
                   className="rounded-full border-white/24 px-7 text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white"
                 >
-                  <Link href="#en-vivo">Vengo del live</Link>
+                  <Link href="#en-vivo">Seguir la noche</Link>
                 </Button>
               </div>
 
               <div className="mt-9 grid max-w-xl grid-cols-3 gap-3">
                 {[
-                  ["80K+", "miradas en redes"],
+                  ["80K+", "miradas cerca"],
                   ["18+", "entrada adulta"],
                   ["Tokens", "acceso privado"],
                 ].map(([value, label]) => (
@@ -229,10 +229,6 @@ export default function HomePage() {
             </div>
 
             <div className="relative mx-auto w-full max-w-[42rem]">
-              <div className="absolute -right-6 -top-6 hidden rounded-[2rem] border border-white/12 bg-white/8 px-5 py-4 text-sm leading-7 text-white/74 shadow-[0_24px_70px_-42px_rgba(0,0,0,0.65)] backdrop-blur-xl md:block">
-                Si me viste en vivo, aquí empieza lo que el chat no alcanza a sostener.
-              </div>
-
               <div className="rounded-[2.8rem] border border-white/12 bg-black/24 p-3 shadow-[0_60px_140px_-62px_rgba(0,0,0,0.95)]">
                 <div className="relative aspect-[4/4.6] overflow-hidden rounded-[2.25rem]">
                   <Image
@@ -255,8 +251,8 @@ export default function HomePage() {
                       Esta parte se gana entrando, no mirando desde lejos.
                     </p>
                     <p className="mt-4 max-w-sm text-sm leading-7 text-white/72">
-                      Drops, mensajes y momentos privados para cuando la curiosidad ya no quiere
-                      quedarse en público.
+                      Imágenes, mensajes y momentos privados para cuando la curiosidad ya no quiere
+                      quedarse mirando desde fuera.
                     </p>
                   </div>
                 </div>
@@ -300,12 +296,12 @@ export default function HomePage() {
           <div className="space-y-4">
             <p className="text-sm uppercase tracking-[0.34em] text-primary">Dentro del salón</p>
             <h2 className="font-[family-name:var(--font-display)] text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-balance sm:text-5xl">
-              Lo que se queda después de la mirada pública.
+              Lo que aparece cuando entras de verdad.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-            El feed muestra una parte. El live enciende otra. Aquí se guarda lo que merece más
-            calma, más intención y menos ruido.
+            Aquí no vienes a recorrer un catálogo. Vienes a abrir piezas que se sienten más cerca,
+            más cuidadas y más difíciles de soltar.
           </p>
         </div>
 
@@ -348,14 +344,14 @@ export default function HomePage() {
           <div className="grid gap-9 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <div>
               <p className="text-sm uppercase tracking-[0.34em] text-[#f0c878]/70">
-                Del live al after
+                Cuando la noche sube
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-balance sm:text-5xl">
-                Si me ves en vivo, aquí sabes dónde seguir.
+                Si algo te dejó pensando, aquí sabes cómo acercarte.
               </h2>
               <p className="mt-5 text-base leading-8 text-white/72 sm:text-lg">
-                La transmisión prende la noche. El salón la vuelve tuya: drops posteriores, replays
-                elegidos, mensajes privados y entradas que no se pierden entre desconocidos.
+                Hay miradas que no se quedan en una pantalla. Hay mensajes que piden más calma. Y
+                hay entradas que solo tienen sentido cuando ya sabes que quieres mirar más cerca.
               </p>
             </div>
 
@@ -391,7 +387,7 @@ export default function HomePage() {
 
             <div className="space-y-4">
               <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                Los tokens sirven para abrir drops, propinas, mensajes, afters y solicitudes. Cada
+                Los tokens sirven para abrir imágenes, propinas, mensajes y solicitudes. Cada
                 compra debe sentirse como avanzar un poco más, no como llenar una billetera vacía.
               </p>
               <div className="inline-flex items-center gap-3 rounded-full border border-black/8 bg-white/84 px-4 py-2 text-sm text-muted-foreground">
@@ -508,7 +504,7 @@ export default function HomePage() {
               </div>
             </div>
             <h2 className="mt-7 max-w-2xl font-[family-name:var(--font-display)] text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-balance sm:text-5xl">
-              Si llegas encendido del live, Mela sabe por dónde recibirte.
+              Si llegas con ganas, Mela sabe por dónde recibirte.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
               No te explica la página como un robot. Te lee la intención, te propone la entrada y
@@ -538,7 +534,7 @@ export default function HomePage() {
                   Entras con deseo; Mela lo convierte en una ruta.
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-                  Si quieres fotos, after, replay, chat o algo más personal, Mela te acerca al
+                  Si quieres fotos, chat o algo más personal, Mela te acerca al
                   siguiente paso sin hacerte sentir perdido.
                 </p>
               </div>
@@ -546,11 +542,11 @@ export default function HomePage() {
 
             <div className="mt-8 rounded-[2rem] border border-black/8 bg-white px-5 py-5 shadow-[0_22px_46px_-36px_rgba(57,32,39,0.18)]">
               <div className="ml-auto max-w-[20rem] rounded-[1.5rem] bg-primary px-4 py-3 text-sm leading-7 text-white">
-                Vine del live. ¿Qué puedo ver ahora?
+                Quiero algo para esta noche. ¿Por dónde entro?
               </div>
               <div className="mt-3 max-w-[22rem] rounded-[1.5rem] border border-black/8 bg-[#fbf5ee] px-4 py-3 text-sm leading-7 text-muted-foreground">
-                Te llevo al after de esta noche. Si quieres algo más íntimo, empieza con la entrada
-                de 385 tokens.
+                Empieza con la noche reservada. Te deja mirar más, hablar mejor y no quedarte a
+                medias.
               </div>
             </div>
 
