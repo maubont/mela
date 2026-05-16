@@ -185,8 +185,8 @@ export default function HomePage() {
                 No todo lo mío cabe en público.
               </h1>
               <p className="mt-5 max-w-xl text-[1.02rem] leading-8 text-white/78 sm:mt-7 sm:text-xl sm:leading-10">
-                En Medellín hay una parte de mí que se mira más cerca: fotos reservadas, mensajes
-                con intención y entradas privadas para quienes sí saben quedarse.
+                En Medellín guardo fotos, mensajes y entradas privadas para quien sabe mirar más
+                cerca.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 min-[430px]:flex-row sm:mt-9 sm:flex-wrap">
@@ -204,7 +204,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white/24 px-7 text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white"
+                  className="hidden rounded-full border-white/24 px-7 text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:text-white min-[430px]:inline-flex"
                 >
                   <Link href="#en-vivo">Seguir la noche</Link>
                 </Button>
