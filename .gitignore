@@ -1,5 +1,6 @@
 .next
 .netlify
+.deploy-preview
 node_modules
 .env
 .env.local
