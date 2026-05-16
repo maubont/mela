@@ -179,30 +179,30 @@ export default function HomePage() {
 
           <div className="relative z-10 grid gap-6 sm:gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-white/76 backdrop-blur-sm sm:px-4 sm:text-[0.68rem] sm:tracking-[0.24em]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-3 py-2 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-white/78 backdrop-blur-sm sm:px-4 sm:text-[0.68rem] sm:tracking-[0.24em]">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.7)]" />
-                Medellín · disponible hoy
+                Medellín · disponible esta noche
               </div>
 
-              <p className="mt-6 text-[0.66rem] uppercase tracking-[0.32em] text-[#f0c878]/70 sm:mt-8 sm:text-[0.72rem] sm:tracking-[0.42em]">
+              <p className="mt-5 text-[0.66rem] uppercase tracking-[0.32em] text-[#f0c878]/70 sm:mt-8 sm:text-[0.72rem] sm:tracking-[0.42em]">
                 Salón privado
               </p>
-              <h1 className="mt-4 max-w-[11ch] font-[family-name:var(--font-display)] text-[3.35rem] font-semibold leading-[0.9] tracking-[-0.065em] text-balance min-[390px]:text-[3.75rem] sm:mt-5 sm:text-[6.8rem] sm:leading-[0.84] lg:text-[7.7rem]">
-                No todo lo mío cabe en público.
+              <h1 className="mt-3 max-w-[10ch] font-[family-name:var(--font-display)] text-[3rem] font-semibold leading-[0.9] tracking-[-0.065em] text-balance min-[390px]:text-[3.25rem] sm:mt-5 sm:text-[6.8rem] sm:leading-[0.84] lg:text-[7.7rem]">
+                No todo de mí cabe en público.
               </h1>
-              <p className="mt-5 max-w-xl text-[1.02rem] leading-8 text-white/78 sm:mt-7 sm:text-xl sm:leading-10">
-                En Medellín guardo fotos, mensajes y entradas privadas para quien sabe mirar más
-                cerca.
+              <p className="mt-4 max-w-xl text-[0.98rem] leading-7 text-white/78 sm:mt-7 sm:text-xl sm:leading-10">
+                En Medellín hay una parte de mí que no dejo ver en público. Entra si sabes mirar
+                más cerca.
               </p>
 
-              <div className="mt-7 flex flex-col gap-3 min-[430px]:flex-row sm:mt-9 sm:flex-wrap">
+              <div className="mt-7 hidden flex-col gap-3 min-[430px]:flex-row sm:mt-9 sm:flex sm:flex-wrap">
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-full bg-primary px-7 text-primary-foreground shadow-[0_22px_46px_-28px_rgba(181,17,68,0.72)] transition duration-300 hover:-translate-y-0.5 hover:bg-primary/92"
+                  className="rounded-full border border-[#f0c878]/36 bg-[#23050e] px-7 text-white shadow-[0_22px_46px_-28px_rgba(21,0,7,0.9)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2d0712]"
                 >
                   <Link href="/sign-in">
-                    Solicitar acceso
+                    Entrar a mi Salón Privado
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -235,12 +235,13 @@ export default function HomePage() {
                     En línea
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
-                    <p className="max-w-[17rem] font-[family-name:var(--font-display)] text-[2.25rem] font-semibold leading-[0.96] tracking-[-0.05em] text-white sm:max-w-md sm:text-5xl">
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8">
+                    <p className="hidden max-w-md font-[family-name:var(--font-display)] text-5xl font-semibold leading-[0.96] tracking-[-0.05em] text-white sm:block">
                       Entra donde la noche se vuelve privada.
                     </p>
-                    <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/74 sm:mt-4 sm:max-w-sm sm:leading-7">
-                      Imágenes y mensajes para cuando la curiosidad ya quiere mirar más cerca.
+                    <p className="max-w-[18rem] text-sm leading-6 text-white/84 sm:mt-4 sm:max-w-sm sm:leading-7 sm:text-white/74">
+                      Imágenes privadas, mensajes con intención y una versión de mí que pocos
+                      conocen.
                     </p>
                   </div>
                 </div>

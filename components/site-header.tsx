@@ -27,8 +27,11 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Button asChild className="h-11 rounded-full bg-primary px-5 text-sm text-primary-foreground hover:bg-primary/92 sm:h-12 sm:px-6 sm:text-base">
-          <Link href="/sign-in">Solicitar acceso</Link>
+        <Button asChild className="h-10 rounded-full bg-primary px-5 text-sm text-primary-foreground shadow-[0_18px_36px_-28px_rgba(104,5,38,0.75)] hover:bg-primary/92 sm:h-12 sm:px-6 sm:text-base">
+          <Link href="/sign-in">
+            <span className="sm:hidden">Entrar</span>
+            <span className="hidden sm:inline">Solicitar acceso</span>
+          </Link>
         </Button>
       </div>
     </header>
