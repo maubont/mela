@@ -15,6 +15,8 @@ import { MelaAvatar } from "@/components/mela-avatar";
 import { Button } from "@/components/ui/button";
 import { getMelaDashboardSnapshot } from "@/lib/openclaw/service";
 
+export const dynamic = "force-dynamic";
+
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
   style: "currency",
