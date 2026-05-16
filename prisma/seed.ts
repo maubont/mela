@@ -126,7 +126,7 @@ async function main() {
       displayName: "Melany",
       headline: "Editorial creator brand, token-first, global-ready",
       bio: "Luxury token-first creator brand with curated content, live monetization, and AI-assisted fan ops.",
-      city: "Bogota",
+      city: "Medellin",
       country: "Colombia",
       pronouns: "ella / she",
       languages: ["es", "en"],
@@ -140,7 +140,7 @@ async function main() {
       displayName: "Melany",
       headline: "Editorial creator brand, token-first, global-ready",
       bio: "Luxury token-first creator brand with curated content, live monetization, and AI-assisted fan ops.",
-      city: "Bogota",
+      city: "Medellin",
       country: "Colombia",
       pronouns: "ella / she",
       languages: ["es", "en"],
@@ -222,7 +222,7 @@ async function main() {
     },
   });
 
-  const agent = await prisma.aiAgentProfile.upsert({
+  const agent = await prisma.aIAgentProfile.upsert({
     where: { creatorId: creator.id },
     update: {
       name: "Mela",
@@ -308,7 +308,7 @@ async function main() {
       },
     },
   ]) {
-    await prisma.aiAutomationRule.upsert({
+    await prisma.aIAutomationRule.upsert({
       where: {
         agentId_name: {
           agentId: agent.id,

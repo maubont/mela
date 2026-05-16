@@ -1,6 +1,8 @@
+import type { Route } from "next";
+
 export interface NavItem {
   label: string;
-  href: string;
+  href: Route;
 }
 
 export interface PhaseModule {
@@ -20,4 +22,3 @@ export interface AiModeDefinition {
   label: string;
   objective: string;
 }
-

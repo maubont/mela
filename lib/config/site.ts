@@ -4,15 +4,16 @@ export const siteConfig = {
   name: "Melany",
   alternativeName: "Mela Vault",
   description:
-    "Una plataforma de acceso reservado construida alrededor de exclusividad, cercanía y una experiencia visual cuidada.",
+    "Salón privado de Melany en Medellín: drops reservados, afters del live, chat directo y acceso privado con una experiencia elegante, discreta y provocadora.",
   creatorName: "Melany",
   locale: "es-CO",
 } as const;
 
 export const navigation: NavItem[] = [
   { label: "Inicio", href: "/" },
-  { label: "Colecciones", href: "/#colecciones" },
-  { label: "Acceso", href: "/#acceso" },
+  { label: "En vivo", href: "/#en-vivo" },
+  { label: "Experiencias", href: "/#experiencias" },
+  { label: "Tokens", href: "/#acceso" },
   { label: "Mela", href: "/#mela" },
 ];
 

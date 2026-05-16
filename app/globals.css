@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 34 33% 96%;
-    --foreground: 15 20% 14%;
+    --background: 30 31% 95%;
+    --foreground: 350 32% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 15 20% 14%;
+    --card-foreground: 350 32% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 15 20% 14%;
-    --primary: 10 57% 44%;
+    --popover-foreground: 350 32% 10%;
+    --primary: 2 69% 45%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 36 31% 90%;
-    --secondary-foreground: 15 20% 14%;
-    --muted: 30 18% 89%;
-    --muted-foreground: 16 12% 37%;
-    --accent: 42 82% 63%;
-    --accent-foreground: 20 26% 12%;
+    --secondary: 33 34% 89%;
+    --secondary-foreground: 350 32% 10%;
+    --muted: 27 22% 88%;
+    --muted-foreground: 12 14% 38%;
+    --accent: 40 78% 60%;
+    --accent-foreground: 350 32% 10%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 20 20% 83%;
-    --input: 20 20% 83%;
-    --ring: 10 57% 44%;
+    --border: 18 22% 82%;
+    --input: 18 22% 82%;
+    --ring: 2 69% 45%;
     --radius: 1.25rem;
   }
 
@@ -33,19 +33,19 @@
     --card-foreground: 32 38% 93%;
     --popover: 18 16% 13%;
     --popover-foreground: 32 38% 93%;
-    --primary: 12 63% 57%;
+    --primary: 4 65% 54%;
     --primary-foreground: 0 0% 100%;
     --secondary: 18 14% 19%;
     --secondary-foreground: 32 38% 93%;
     --muted: 18 13% 18%;
     --muted-foreground: 28 17% 71%;
-    --accent: 41 72% 56%;
+    --accent: 39 68% 58%;
     --accent-foreground: 18 17% 10%;
     --destructive: 0 63% 47%;
     --destructive-foreground: 0 0% 98%;
     --border: 18 12% 24%;
     --input: 18 12% 24%;
-    --ring: 12 63% 57%;
+    --ring: 4 65% 54%;
   }
 
   * {
@@ -59,15 +59,15 @@
   body {
     @apply min-h-screen bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(circle at top left, rgba(129, 41, 55, 0.14), transparent 28%),
-      radial-gradient(circle at 82% 10%, rgba(199, 165, 106, 0.15), transparent 18%),
-      radial-gradient(circle at 50% 0%, rgba(52, 18, 24, 0.08), transparent 24%),
-      linear-gradient(180deg, rgba(250, 245, 238, 0.98), rgba(239, 229, 218, 1));
+      radial-gradient(circle at 8% 2%, rgba(202, 40, 48, 0.16), transparent 30%),
+      radial-gradient(circle at 88% 4%, rgba(229, 174, 91, 0.16), transparent 24%),
+      radial-gradient(circle at 50% -8%, rgba(88, 4, 21, 0.12), transparent 34%),
+      linear-gradient(180deg, rgba(250, 244, 237, 0.98), rgba(235, 224, 214, 1));
     background-attachment: fixed;
   }
 
   ::selection {
-    background: rgba(181, 87, 62, 0.18);
+    background: rgba(170, 40, 62, 0.2);
   }
 }
 
@@ -78,31 +78,33 @@
 
   .salon-hero {
     background:
-      radial-gradient(circle at top left, rgba(212, 170, 103, 0.16), transparent 24%),
-      radial-gradient(circle at bottom right, rgba(145, 38, 63, 0.22), transparent 30%),
-      linear-gradient(145deg, rgba(44, 16, 24, 0.98), rgba(74, 27, 39, 0.98));
+      radial-gradient(circle at top left, rgba(242, 181, 92, 0.2), transparent 24%),
+      radial-gradient(circle at 84% 18%, rgba(236, 45, 52, 0.18), transparent 28%),
+      radial-gradient(circle at 72% 90%, rgba(150, 10, 42, 0.28), transparent 34%),
+      linear-gradient(145deg, rgba(33, 2, 11, 0.99), rgba(87, 4, 24, 0.99) 52%, rgba(153, 22, 43, 0.98));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
-      0 34px 90px -36px rgba(42, 17, 22, 0.76),
+      0 46px 122px -48px rgba(76, 4, 22, 0.84),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .salon-dark-card {
     background:
-      radial-gradient(circle at top left, rgba(212, 170, 103, 0.14), transparent 24%),
-      linear-gradient(155deg, rgba(50, 18, 27, 0.98), rgba(88, 31, 46, 0.96));
+      radial-gradient(circle at top left, rgba(242, 181, 92, 0.16), transparent 24%),
+      radial-gradient(circle at bottom right, rgba(238, 48, 54, 0.18), transparent 30%),
+      linear-gradient(155deg, rgba(38, 3, 14, 0.99), rgba(110, 8, 34, 0.98));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
-      0 28px 72px -42px rgba(42, 17, 22, 0.82),
+      0 30px 82px -44px rgba(76, 4, 22, 0.82),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .salon-soft-card {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.7)),
-      linear-gradient(120deg, rgba(206, 166, 101, 0.08), rgba(255, 255, 255, 0));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 244, 0.72)),
+      linear-gradient(120deg, rgba(218, 46, 52, 0.055), rgba(226, 176, 103, 0.08));
     @apply border border-white/70 backdrop-blur-xl;
-    box-shadow: 0 26px 64px -44px rgba(60, 35, 42, 0.34);
+    box-shadow: 0 34px 78px -50px rgba(72, 18, 28, 0.34);
   }
 
   .salon-glass-card {
@@ -117,13 +119,26 @@
     @apply inline-flex items-center rounded-full px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em];
   }
 
+  .salon-hover-lift {
+    transition:
+      transform 280ms ease,
+      box-shadow 280ms ease,
+      border-color 280ms ease;
+  }
+
+  .salon-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 80px -48px rgba(86, 20, 34, 0.38);
+    border-color: rgba(176, 74, 74, 0.2);
+  }
+
   .velvet-panel {
     background:
-      radial-gradient(circle at top left, rgba(199, 165, 106, 0.22), transparent 26%),
-      radial-gradient(circle at bottom right, rgba(163, 53, 77, 0.24), transparent 28%),
-      linear-gradient(145deg, rgba(42, 17, 22, 0.98), rgba(70, 24, 36, 0.96));
+      radial-gradient(circle at top left, rgba(241, 184, 96, 0.22), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(214, 30, 48, 0.24), transparent 32%),
+      linear-gradient(145deg, rgba(31, 2, 11, 0.98), rgba(95, 6, 31, 0.97));
     box-shadow:
-      0 32px 90px -34px rgba(42, 17, 22, 0.76),
+      0 34px 96px -36px rgba(76, 4, 22, 0.78),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
